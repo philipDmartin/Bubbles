@@ -1,39 +1,52 @@
 const dialog = document.querySelector(".messages")
 const message = document.querySelector(".messages__text")
 
-document.querySelector("#button--closeMessage")
-        .addEventListener("click", e => {
+document.querySelector(".container")
+    .addEventListener("click", e => {
+
+        if (e.target.id === "button--closeMessage") {
             e.target.parentNode.close()
-        })
-
-document.querySelector("#purchase__itunes")
-        .addEventListener("click", e => {
-    message.innerHTML = "Purchasing song on iTunes..."
-    dialog.show()
-})
-
-/**
- * When Don Ho's name is clicked, display the following message
- *
- *  "Donald Tai Loy Ho was born in 1930 in Honolulu, Hawaii"
- */
+        }
+    })
 
 
+document.querySelector(".container")
+    .addEventListener("click", clickEvent => {
 
-/**
- * When Google Play store button is clicked, display the following message
- *
- *  "Purchasing song on Google Play..."
- */
+        if (clickEvent.target.id === "purchase__itunes") {
+            message.innerHTML = "Purchasing song on iTunes..."
+            dialog.show()
+        }
+
+        if (clickEvent.target.classList.contains("artist")) {
+            message.innerHTML = "Donald Tai Loy Ho was born in 1930 in Honolulu, Hawaii"
+            dialog.show()
+        }
 
 
 
-/**
- * When an element with class of `lyrics__text` has the mouse enter it
- *  then change the background color to light goldenrod, and the text
- *  color to dark goldenrod. Do not use the CSS :hover pseudo class. Use
- *  JavaScript to add the appropriate class.
- *
- * When the use moves the mouse out of lyrics, remove the CSS that highlights
- *
- */
+        if (clickEvent.target.id === "purchase__googleplay") {
+            message.innerHTML = "Purchasing song on Google Play..."
+            dialog.show()
+        }
+    })
+
+
+
+document.querySelector(".container")
+    .addEventListener("mouseover", event => {
+
+        if (event.target.classList.contains("lyrics__text")) {
+            event.target.classList.add("highlightWithGoldenrod")
+        }
+    })
+
+document.querySelector(".container")
+    .addEventListener("mouseout", event => {
+
+        if (event.target.classList.contains("lyrics__text")) {
+            event.target.classList.remove("highlightWithGoldenrod")
+        }
+    })
+
+
