@@ -1,0 +1,13 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+
+.lyrics, .purchasing {
+    margin: 1em 0;
+}
+
+.highlightWithGoldenrod {
+    background-color: lightgoldenrodyellow;
+    color: darkgoldenrod;
+}
