@@ -13,7 +13,6 @@ export const addPurchaseEventListeners = () => {
         if (clickEvent.target.id === "purchase__googleplay") {
             theActualMessage = "Purchasing song on Google Play..."
         }
-
         // Build a custom message with the corresponding text
         // Call it "purchaseButtonClicked"
         if (clickEvent.target.id.startsWith("purchase__")) {
