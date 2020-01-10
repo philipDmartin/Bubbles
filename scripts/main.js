@@ -18,7 +18,11 @@ document.querySelector("#purchase__itunes")
  *  "Donald Tai Loy Ho was born in 1930 in Honolulu, Hawaii"
  */
 
-
+document.querySelector(".artist")
+        .addEventListener("click", e => {
+    message.innerHTML = "Donald Tai Loy Ho was born in 1930 in Honolulu, Hawaii"
+    dialog.show()
+})
 
 /**
  * When Google Play store button is clicked, display the following message
@@ -26,7 +30,11 @@ document.querySelector("#purchase__itunes")
  *  "Purchasing song on Google Play..."
  */
 
-
+document.querySelector("#purchase__googleplay")
+        .addEventListener("click", e => {
+    message.innerHTML = "Purchasing song on Google Play..."
+    dialog.show()
+})
 
 /**
  * When an element with class of `lyrics__text` has the mouse enter it
@@ -37,3 +45,15 @@ document.querySelector("#purchase__itunes")
  * When the use moves the mouse out of lyrics, remove the CSS that highlights
  *
  */
+
+ const allLyrics = document.querySelectorAll(".lyrics__text") 
+
+ for (const lyricNode of allLyrics) {
+     lyricNode.addEventListener("mouseover", mouseOverEvent => {
+         lyricNode.classList.add("highlightWithGoldenrod")
+     })
+     
+ lyricNode.addEventListener("mouseout", mouseOverEvent => {
+     lyricNode.classList.remove("highlightWithGoldenrod")
+ })
+ }
